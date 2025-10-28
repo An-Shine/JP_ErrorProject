@@ -20,7 +20,7 @@ public class CongratScript : MonoBehaviour
         TimeToNextText = 0.0f;
         CurrentText = 0;
 
-        RotatingSpeed = 1.0f;
+        RotatingSpeed = 100.0f;
         
         TextToDisplay = new List<string>();
         TextToDisplay.Add("Congratulation");
@@ -46,7 +46,8 @@ public class CongratScript : MonoBehaviour
                 CurrentText = 0;
             }
 
-            Text.text = TextToDisplay[CurrentText];                     //여기 체크한번 해봐야하긴함
+            Text.text = TextToDisplay[CurrentText];            
         }
+        transform.Rotate(Vector3.up * RotatingSpeed * Time.deltaTime);
     }
 }
