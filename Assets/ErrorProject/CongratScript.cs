@@ -46,8 +46,10 @@ public class CongratScript : MonoBehaviour
                 CurrentText = 0;
             }
 
-            Text.text = TextToDisplay[CurrentText];            
+            Text.text = TextToDisplay[CurrentText];
         }
-        transform.Rotate(Vector3.up * RotatingSpeed * Time.deltaTime);
+        //Text.transform.rotation = Quaternion.Euler(0, 0, RotatingSpeed);
+        //(Vector3.up * RotatingSpeed * Time.deltaTime);
+        Text.transform.Rotate(0, 0, RotatingSpeed*Time.deltaTime);
     }
 }
